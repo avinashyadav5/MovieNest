@@ -30,7 +30,7 @@ function Watchlist({ watchList, handleRemoveFromWatchList, setWatchList }) {
 
   return (
     <>
-      <div className='flex justify-center flex-wrap m-4'>
+      <div className='flex justify-center flex-wrap m-4 mt-18'>
         {genreList.map((genre) => (
           <div
             key={genre}

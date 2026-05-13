@@ -36,7 +36,7 @@ function Watchlist({ watchList, handleRemoveFromWatchList, setWatchList }) {
             key={genre}
             onClick={() => setCurrGenre(genre)}
             className={`flex justify-center items-center h-[3rem] w-[9rem] rounded-xl text-white text-xl mx-4 cursor-pointer transition-all duration-300 ${
-              currGenre === genre ? 'bg-blue-500' : 'bg-gray-400'
+              currGenre === genre ? 'bg-blue-500' : 'bg-gray-400 dark:bg-gray-600'
             }`}
           >
             {genre}
@@ -50,13 +50,13 @@ function Watchlist({ watchList, handleRemoveFromWatchList, setWatchList }) {
           value={search}
           type='text'
           placeholder='Search your watchlist...'
-          className='h-12 w-72 px-4 rounded-lg shadow-md border focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300'
+          className='h-12 w-72 px-4 rounded-lg shadow-md border focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 bg-white text-gray-900 dark:bg-gray-800 dark:text-white dark:border-gray-600'
         />
       </div>
 
-      <div className='overflow-hidden rounded-lg border border-gray-200 m-8'>
-        <table className='w-full text-gray-400 text-center'>
-          <thead className='border-b-2'>
+      <div className='overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 m-8 transition-colors duration-300'>
+        <table className='w-full text-gray-700 dark:text-gray-400 text-center'>
+          <thead className='border-b-2 border-gray-200 dark:border-gray-700'>
             <tr>
               <th>Name</th>
               <th className='flex justify-center'>
@@ -77,7 +77,7 @@ function Watchlist({ watchList, handleRemoveFromWatchList, setWatchList }) {
                 return titleMatch && genreMatch;
               })
               .map((movieObj) => (
-                <tr className='border-b-2' key={movieObj.id}>
+                <tr className='border-b-2 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300' key={movieObj.id}>
                   <td className='flex items-center px-6 py-2.5'>
                     <img
                       className='h-[6rem] w-[10rem]'

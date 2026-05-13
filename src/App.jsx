@@ -8,6 +8,19 @@ import Banner from './components/Banner.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 function App() {
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('theme') === 'dark';
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [darkMode]);
 
   let [watchList, setWatchList] = useState([])
 
@@ -37,7 +50,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
 
         <Routes>
 
